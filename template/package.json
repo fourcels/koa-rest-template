@@ -1,9 +1,9 @@
 {
   "name": "{{project.name}}",
   "description": "{{project.description}}",
-  "version": "1.0.0",
+  "version": "{{project.version}}",
+  "private": true,
   "main": "app.js",
-  "license": "MIT",
   "scripts": {
     "start": "node app.js"
   },

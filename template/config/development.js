@@ -1,8 +1,8 @@
 module.exports = {
   mongoose: {
-    uri: 'mongodb://localhost/koa2-rest'
+    uri: 'mongodb://localhost/{{project.name}}'
   },
   jwt: {
-    secret: 'c563bbf30c548c177a76e0b4cfc95218cad80921'
+    secret: '{{jwt.secret}}'
   }
 }

@@ -1,13 +1,8 @@
-# {{project.name}}
+# {{titleize project.name}}
 
-> {{project.description}}
-
-## Setup
+## Usage
 
 ``` bash
-# install dependencies
-yarn install
-
 # start server
 yarn start
 ```

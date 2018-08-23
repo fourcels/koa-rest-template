@@ -1,6 +1,6 @@
 {
-  "name": "{{projectName}}",
-  "description": "{{description}}",
+  "name": "{{project.name}}",
+  "description": "{{project.description}}",
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",

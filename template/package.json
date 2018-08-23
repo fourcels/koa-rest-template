@@ -1,7 +1,6 @@
 {
   "name": "{{project.name}}",
-  "description": "{{project.description}}",
-  "version": "{{project.version}}",
+  "version": "1.0.0",
   "private": true,
   "main": "app.js",
   "scripts": {

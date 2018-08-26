@@ -4,6 +4,8 @@ const path = require('path')
 const config = require('config')
 const mongoose = require('mongoose')
 const Router = require('koa-router')
+const SocketIO = require('./SocketIO')
+
 module.exports = class {
   constructor (app) {
     this.app = app
@@ -31,11 +33,12 @@ module.exports = class {
   }
   initController () {
     const { app } = this
-    app.controllers = app.context.controllers = this.load('controllers', true)
+    app.controllers = this.load('controllers', true)
   }
   initService () {
     const { app } = this
-    app.services = app.context.services = this.load('services', true)
+    app.services = this.load('services', true)
+    app.context.services = app.services
   }
   initModel () {
     const { app } = this
@@ -90,5 +93,12 @@ module.exports = class {
     this.initSchedule()
     this.initRouter()
     this.initMongoose()
+  }
+  start (port) {
+    const { app } = this
+    const io = new SocketIO(app)
+    app.io = io
+    app.context.io = io
+    io.server.listen(port)
   }
 }

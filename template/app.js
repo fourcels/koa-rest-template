@@ -17,18 +17,18 @@ app.use(helmet())
 app.use(cors())
 app.use(logger())
 
-// init app
-const application = new Application(app)
-application.init()
-
 // error log
 app.on('error', (err, ctx) => {
   console.error(err.stack)
 })
 
+// init app
+const application = new Application(app)
+application.init()
+
 if (!module.parent) {
   const port = process.env.PORT || '3000'
-  app.listen(port)
+  application.start(port)
   console.log('Listening on ' + port)
 }
 

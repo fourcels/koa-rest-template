@@ -46,4 +46,21 @@ module.exports = class extends Base {
     await userDoc.save()
     ctx.body = userDoc
   }
+  async notify (ctx) {
+    ctx.verifyParams({
+      type: 'string',
+      name: 'string',
+      message: 'string'
+    })
+    const { type, name, message } = ctx.request.body
+    const { User } = ctx.models
+    const userDoc = await User.findOne({
+      name
+    })
+    if (!userDoc) {
+      return ctx.throw(400, 'user not found')
+    }
+    ctx.io.emit(userDoc.id, type, message)
+    ctx.status = 204
+  }
 }

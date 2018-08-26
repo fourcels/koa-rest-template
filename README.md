@@ -35,3 +35,7 @@ Options:
   -s, --skip     Skip dependencies install and git init
   -h, --help     output usage information
 ```
+
+## License
+
+[MIT](LICENSE)

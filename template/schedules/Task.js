@@ -5,6 +5,6 @@ module.exports = class extends Base {
     return '*/1 * * * *'
   }
   async run (date) {
-    console.log(date.toString())
+    this.log.info(date.toString())
   }
 }

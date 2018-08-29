@@ -15,6 +15,7 @@ const router = new Router({
 module.exports = function ({ user }) {
   router.get('/', jwt, user.show.bind(user))
   router.post('/', user.create.bind(user))
+  router.get('/:id', user.find.bind(user))
   router.post('/login', user.login.bind(user))
   router.post('/notify', user.notify.bind(user))
 

@@ -7,6 +7,18 @@ module.exports = class extends Base {
     const userDoc = await User.findById(user.id)
     ctx.body = userDoc
   }
+  async find (ctx) {
+    ctx.verifyParams({
+      id: 'objectId'
+    })
+    const { id } = ctx.params
+    const { User } = ctx.models
+    const userDoc = await User.findById(id)
+    if (!userDoc) {
+      return ctx.throw(400, 'user not exist')
+    }
+    ctx.body = userDoc
+  }
   async login (ctx) {
     ctx.verifyParams({
       name: 'string',

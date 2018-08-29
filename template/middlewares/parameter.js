@@ -1,8 +1,14 @@
 const Parameter = require('parameter')
+const mongoose = require('mongoose')
 
 // custom rules
 const rules = {
-  phone: /1\d{10}/
+  phone: /1\d{10}/,
+  objectId: function (_, val) {
+    if (!mongoose.Types.ObjectId.isValid(val)) {
+      return this.t('should be a objectId')
+    }
+  }
 }
 
 module.exports = function (app, translate) {

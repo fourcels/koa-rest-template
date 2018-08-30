@@ -7,7 +7,7 @@ const Application = require('./lib/Application')
 const app = new Koa()
 
 // log
-app.use(require('@fourcels/koa-log4js')(app))
+app.use(require('koa-log4js-logger')(app))
 
 // error handling
 app.use(require('./middlewares/error'))

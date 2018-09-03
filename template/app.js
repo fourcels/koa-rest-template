@@ -5,6 +5,7 @@ const bodyParser = require('koa-bodyparser')
 const Application = require('./lib/Application')
 
 const app = new Koa()
+app.proxy = true // get real ip
 
 // log
 app.use(require('koa-log4js-logger')(app))

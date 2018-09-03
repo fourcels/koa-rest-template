@@ -1,6 +1,6 @@
 {
   "name": "koa-rest-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "repository": "https://github.com/fourcels/koa-rest-template.git",
   "author": "John Gauss <fourcels@gmail.com>",
